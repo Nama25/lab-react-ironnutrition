@@ -9,21 +9,18 @@ function App() {
     <div className="App">
     <h2>Food List</h2>
 
-    {list.map((list) => {
-      return (
-      <div>
-      <p>{list.name}</p>
-      <img src={list.image} alt="Food" width={120}/>
-      </div>
-      )
-    })}
+   
+      {list.map(food => {
+        return <FoodBox key={food.id} food={food}/>
+      })}
+  
 
-    <FoodBox food={ {
+ <FoodBox food={ {
   name: "Orange",
   calories: 85,
   image: "https://i.imgur.com/abKGOcv.jpg",
   servings: 1
-}} />
+}} /> 
       
     </div>
   );
