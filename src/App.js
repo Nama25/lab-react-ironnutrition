@@ -40,7 +40,7 @@ function App() {
       <h2>Food List</h2>
 
       {list.map((food) => {
-        return <FoodBox key={food.id} food={food} clickToDelete={deleteFood}/>;
+        return <FoodBox key={food.name} food={food} clickToDelete={deleteFood}/>;
       })}
 
      
