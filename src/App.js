@@ -6,7 +6,7 @@ import AddFoodForm from './components/AddFoodForm';
 
 function App() {
   const [list, setList] = useState(foods);
-  const [listAll, setListAll] = useState();
+  const [listAll, setListAll] = useState(foods);
 
   // Iteration 4 ADD NEW FOOD
   const addNewFood = (newFood) => {
@@ -17,6 +17,22 @@ function App() {
     setListAll(updatedListAll);
   };
 
+  // Iteration 5 SEARCH BAR >> to do
+
+  // Iteration 6 DELETE
+  function deleteFood(name) {
+    const filteredFood = list.filter((food) => {
+      return food.name !== name;
+    });
+    setList(filteredFood);
+  }
+
+  // Iteration 7 HIDE/ADD Food form >> to do
+
+  // ITeration 8 FEEDBACK Message >> to do
+
+
+
   return (
     <div className="App">
       <AddFoodForm addNewFood={addNewFood} />
@@ -24,7 +40,7 @@ function App() {
       <h2>Food List</h2>
 
       {list.map((food) => {
-        return <FoodBox key={food.id} food={food} />;
+        return <FoodBox key={food.id} food={food} clickToDelete={deleteFood}/>;
       })}
 
      

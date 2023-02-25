@@ -27,6 +27,8 @@ const handleSubmit = (e) => {
 
 }
 
+const {addNewFood} = props
+
 
     return (
         <div>
@@ -65,7 +67,7 @@ const handleSubmit = (e) => {
                 onChange={handleServings}
             />
 
-            <button type="submit">Create</button>
+            <button onClick={addNewFood}>Create</button>
 
             </form>
 
